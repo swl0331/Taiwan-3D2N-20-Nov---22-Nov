@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdf7ee">
+<meta name="format-detection" content="telephone=no">
+<title>台北 3D2N · 20–22 Nov 2026 · v1</title>
+<style>
+  :root{
+    --paper:#fdf7ee;
+    --paper-2:#fffdf9;
+    --ink:#2e2620;
+    --ink-2:#5a4f45;
+    --ink-3:#8f8377;
+    --line:#eddfcc;
+    --brand:#e0603a;
+    --brand-2:#c74a28;
+    --brand-soft:#fdeee7;
+    --mango:#e79a2b;
+    --mango-soft:#fdf3e0;
+    --matcha:#7d9b62;
+    --matcha-soft:#eef4e6;
+    --sky:#4a90b8;
+    --sky-soft:#e9f2f8;
+    --boba:#8a5a3b;
+    --radius:22px;
+    --shadow:0 2px 0 rgba(46,38,32,.03), 0 16px 34px -20px rgba(46,38,32,.30);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{
+    margin:0;
+    overflow-x:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 12% 4%, rgba(242,169,59,.10), transparent 38%),
+      radial-gradient(circle at 92% 22%, rgba(125,155,98,.09), transparent 34%),
+      var(--paper);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand-2);text-decoration:none;border-bottom:1.5px solid rgba(224,96,58,.30)}
+  a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;overflow:hidden;padding:52px 0 40px;
+    background:
+      radial-gradient(circle at 88% 8%, rgba(242,169,59,.42), transparent 46%),
+      radial-gradient(circle at 6% 96%, rgba(125,155,98,.30), transparent 44%),
+      linear-gradient(158deg,#fff8ec 0%,#fdeee7 52%,#f8e7d6 100%);
+    border-bottom:1px solid var(--line);
+  }
+  header.hero::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:9px;
+    background:repeating-linear-gradient(90deg,
+      #e0603a 0 20px,#4a90b8 20px 40px,#7d9b62 40px 60px,#e79a2b 60px 80px);
+  }
+  header.hero::after{
+    content:"";position:absolute;right:-70px;bottom:-90px;width:280px;height:280px;
+    border-radius:50%;background:rgba(224,96,58,.07);pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1}
+  .eyebrow{
+    display:inline-block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+    background:#fff;border:1.5px solid var(--line);color:var(--brand-2);
+    padding:6px 14px;border-radius:999px;margin-bottom:18px;font-weight:800;
+    box-shadow:0 2px 0 rgba(46,38,32,.04);
+  }
+  h1{
+    margin:0 0 10px;font-size:clamp(28px,4.8vw,44px);line-height:1.16;
+    letter-spacing:-.01em;font-weight:900;color:var(--ink);
+  }
+  h1 em{font-style:normal;color:var(--brand)}
+  .hero-sub{margin:0;color:var(--ink-2);font-size:15px;max-width:64ch}
+
+  /* hotel card */
+  .hotel-card{
+    display:flex;align-items:center;gap:14px;margin-top:24px;
+    background:#fff;border:1.5px solid var(--line);border-radius:18px;
+    padding:14px 18px;max-width:520px;border-bottom:1.5px solid var(--line);
+    box-shadow:0 3px 0 rgba(46,38,32,.04), 0 18px 30px -22px rgba(46,38,32,.4);
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .hotel-card:hover{transform:translateY(-2px);box-shadow:0 4px 0 rgba(46,38,32,.05), 0 22px 34px -20px rgba(46,38,32,.45)}
+  .hotel-ico{
+    flex:0 0 44px;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+    background:var(--mango-soft);font-size:21px;
+  }
+  .hotel-txt{flex:1;min-width:0;display:block}
+  .hotel-txt b{display:block;font-size:15.5px;font-weight:800;color:var(--ink);line-height:1.3}
+  .hotel-txt span{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.4}
+  .hotel-go{
+    flex:0 0 auto;font-size:12px;font-weight:800;color:#fff;background:var(--brand);
+    padding:7px 13px;border-radius:999px;white-space:nowrap;
+  }
+
+  .hero-facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .fact{
+    background:rgba(255,255,255,.78);border:1.5px solid var(--line);
+    border-radius:14px;padding:9px 15px;font-size:13px;color:var(--ink-2);
+    min-width:0;overflow-wrap:anywhere;
+  }
+  .fact b{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:800;margin-bottom:1px}
+
+  /* ---------- NAV ---------- */
+  nav.toc{
+    position:sticky;top:0;z-index:50;background:rgba(253,247,238,.94);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  }
+  nav.toc .wrap{display:flex;gap:5px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{
+    flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);
+    padding:7px 13px;border-radius:999px;border:none;white-space:nowrap;
+  }
+  nav.toc a:hover{background:var(--brand-soft);color:var(--brand-2)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:44px 0 8px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+  h2{font-size:23px;margin:0;letter-spacing:-.01em;font-weight:900}
+  .sec-num{
+    font-size:12px;font-weight:900;letter-spacing:.06em;color:#fff;
+    background:var(--brand);padding:4px 11px;border-radius:999px;
+    box-shadow:0 2px 0 rgba(199,74,40,.25);
+  }
+  .sec-desc{color:var(--ink-3);font-size:14px;margin:0 0 22px;max-width:80ch}
+
+  .card{
+    background:var(--paper-2);border:1.5px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:22px 24px;margin-bottom:18px;
+  }
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+
+  /* ---------- FIXED BOOKINGS ---------- */
+  .booking{
+    background:#fff;border:1.5px solid var(--line);border-radius:18px;
+    padding:16px 18px;position:relative;overflow:hidden;
+    box-shadow:0 2px 0 rgba(46,38,32,.03);
+  }
+  .booking::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:linear-gradient(180deg,var(--brand),var(--mango));
+  }
+  .booking .when{
+    font-size:11.5px;font-weight:900;letter-spacing:.08em;color:var(--brand-2);
+    text-transform:uppercase;margin-bottom:5px;
+  }
+  .booking .what{font-weight:800;font-size:16px;margin-bottom:6px;line-height:1.35}
+  .booking .meta{font-size:13px;color:var(--ink-2)}
+  .booking .meta div{margin-top:3px}
+  .tag{
+    display:inline-block;font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:999px;
+    background:var(--brand-soft);color:var(--brand-2);margin-left:6px;vertical-align:middle;
+  }
+  .tag.cash{background:var(--mango-soft);color:#a86a10}
+  .tag.fixed{background:var(--brand);color:#fff}
+
+  /* ---------- DAY ---------- */
+  .day{
+    background:var(--paper-2);border:1.5px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:28px;overflow:hidden;
+  }
+  .day-head{
+    display:flex;align-items:center;gap:15px;padding:18px 24px;
+    background:linear-gradient(100deg,var(--brand-soft),#fffdf9 72%);
+    border-bottom:1.5px solid var(--line);flex-wrap:wrap;
+  }
+  .day-badge{
+    width:48px;height:48px;flex:0 0 48px;border-radius:16px;
+    background:linear-gradient(150deg,var(--brand),var(--mango));
+    color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px;line-height:1.1;
+    text-align:center;box-shadow:0 3px 0 rgba(199,74,40,.22);
+  }
+  .day-badge span{display:block;font-size:9px;letter-spacing:.1em;opacity:.9;font-weight:800}
+  .day-title{font-size:17.5px;font-weight:900;margin:0;line-height:1.3}
+  .day-theme{font-size:12.5px;color:var(--ink-3);margin:2px 0 0}
+  .day-body{padding:8px 24px 24px}
+
+  /* timeline */
+  ol.tl{list-style:none;margin:16px 0 0;padding:0;position:relative}
+  ol.tl::before{
+    content:"";position:absolute;left:64px;top:10px;bottom:10px;width:2px;
+    background:repeating-linear-gradient(180deg,var(--line) 0 6px,transparent 6px 12px);
+  }
+  ol.tl li{position:relative;display:flex;gap:17px;padding:10px 0}
+  ol.tl .t{
+    flex:0 0 56px;text-align:right;font-size:12.5px;font-weight:900;color:var(--ink-3);
+    font-variant-numeric:tabular-nums;padding-top:2px;
+  }
+  ol.tl .dot{
+    position:absolute;left:58px;top:15px;width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 34% 30%,#fff 0 18%,var(--boba) 20% 100%);
+    border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line);z-index:1;
+  }
+  ol.tl li.fixed .dot{
+    background:radial-gradient(circle at 34% 30%,#fff 0 18%,var(--brand) 20% 100%);
+    box-shadow:0 0 0 1.5px rgba(224,96,58,.35), 0 0 0 6px rgba(224,96,58,.10);
+  }
+  ol.tl li.transit .dot{
+    width:9px;height:9px;left:60.5px;top:17.5px;
+    background:var(--line);box-shadow:none;border:1.5px solid #fff;
+  }
+  ol.tl .c{flex:1;min-width:0;padding-left:7px}
+  ol.tl .c b{font-size:14.5px;font-weight:800}
+  ol.tl .c p{margin:3px 0 0;font-size:13px;color:var(--ink-2)}
+  ol.tl li.transit .c b{font-size:12.5px;font-weight:700;color:var(--ink-3)}
+  .note{
+    display:inline-block;font-size:12px;color:#8a5a10;background:var(--mango-soft);
+    border:1.5px solid rgba(231,154,43,.28);border-radius:10px;padding:2px 9px;margin-top:5px;
+  }
+  .cost{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+  /* day map link row */
+  .day-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;padding-top:16px;border-top:1.5px dashed var(--line)}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;
+    padding:8px 15px;border-radius:999px;background:var(--brand);color:#fff;border:none;
+    box-shadow:0 2px 0 rgba(199,74,40,.22);
+  }
+  .btn:hover{background:var(--brand-2);color:#fff}
+  .btn.ghost{background:#fff;color:var(--brand-2);border:1.5px solid rgba(224,96,58,.32);box-shadow:none}
+  .btn.ghost:hover{background:var(--brand-soft);color:var(--brand-2)}
+
+  /* plan B */
+  .planb{
+    margin-top:18px;border:1.5px dashed rgba(74,144,184,.42);background:var(--sky-soft);
+    border-radius:16px;padding:15px 18px;
+  }
+  .planb h4{margin:0 0 7px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#2f6d90;font-weight:900}
+  .planb ul{margin:0;padding-left:19px;font-size:13.5px;color:var(--ink-2)}
+  .planb li{margin:4px 0}
+
+  /* tables */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:900;background:#fdf6ea}
+  tbody tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tfoot td{font-weight:900;background:#fdf6ea;border-top:2px solid var(--line)}
+
+  /* checklists */
+  .chk{list-style:none;margin:0;padding:0}
+  .chk li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:13.5px;border-bottom:1px dotted #f0e5d5}
+  .chk li:last-child{border-bottom:none}
+  .chk input{margin:5px 0 0;accent-color:var(--brand);width:16px;height:16px;flex:0 0 16px;cursor:pointer}
+  .chk label{cursor:pointer;flex:1}
+  .chk input:checked + label{color:var(--ink-3);text-decoration:line-through}
+  .chk .where{display:block;font-size:11.5px;color:var(--ink-3);margin-top:2px}
+  .chk .where a{font-size:11.5px}
+
+  .pill{
+    display:inline-block;font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:999px;
+    background:var(--matcha-soft);color:#4f6b3a;margin-right:5px;
+  }
+  .pill.warn{background:var(--brand-soft);color:var(--brand-2)}
+  .pill.gold{background:var(--mango-soft);color:#a86a10}
+
+  .do-dont{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+  .do-dont > div{border-radius:18px;padding:16px 18px;font-size:13.5px}
+  .do-dont .do{background:var(--matcha-soft);border:1.5px solid #d8e6c8}
+  .do-dont .dont{background:#fdeeee;border:1.5px solid #f4d6d6}
+  .do-dont h4{margin:0 0 9px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:900}
+  .do-dont .do h4{color:#4f6b3a}
+  .do-dont .dont h4{color:#b03a3a}
+  .do-dont ul{margin:0;padding-left:18px}
+  .do-dont li{margin:5px 0}
+
+  footer{padding:38px 0 64px;color:var(--ink-3);font-size:12.5px;text-align:center}
+  footer .wrap{border-top:1.5px solid var(--line);padding-top:22px}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:720px){
+    .wrap{padding:0 16px}
+    header.hero{padding:38px 0 30px}
+    header.hero::before{height:7px}
+    .eyebrow{font-size:10.5px;padding:5px 12px;margin-bottom:14px}
+    .hero-sub{font-size:14.5px}
+    .hotel-card{flex-wrap:wrap;gap:12px;padding:14px;margin-top:20px;max-width:none}
+    .hotel-ico{flex:0 0 40px;width:40px;height:40px;font-size:19px;border-radius:12px}
+    .hotel-txt{flex:1 1 60%}
+    .hotel-txt b{font-size:15px}
+    .hotel-txt span{font-size:12.5px}
+    .hotel-go{width:100%;display:flex;align-items:center;justify-content:center;min-height:44px;font-size:13.5px;padding:10px 13px}
+    .hero-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+    .fact{padding:8px 12px;font-size:12.5px}
+    .fact b{font-size:10px}
+
+    nav.toc .wrap{padding:8px 16px;gap:6px;scroll-snap-type:x proximity}
+    nav.toc a{font-size:13.5px;padding:9px 14px;min-height:40px;display:flex;align-items:center;scroll-snap-align:start}
+
+    section{padding:30px 0 4px;scroll-margin-top:64px}
+    .sec-head{gap:9px;margin-bottom:6px}
+    h2{font-size:19.5px;line-height:1.35}
+    .sec-num{font-size:11px;padding:3px 9px}
+    .sec-desc{font-size:14px;margin-bottom:16px}
+
+    .card{padding:16px;border-radius:18px;margin-bottom:14px}
+    .grid{gap:12px}
+    .g2,.g3{grid-template-columns:1fr}
+
+    .booking{padding:14px 15px;border-radius:16px}
+    .booking .what{font-size:15.5px}
+    .booking .meta{font-size:13.5px}
+    .tag{font-size:11px}
+
+    .day{border-radius:18px;margin-bottom:20px}
+    .day-head{padding:14px 16px;gap:12px}
+    .day-badge{width:42px;height:42px;flex:0 0 42px;border-radius:13px;font-size:13px}
+    .day-title{font-size:16px}
+    .day-theme{font-size:12.5px}
+    .day-body{padding:6px 16px 18px}
+
+    ol.tl{margin-top:12px}
+    ol.tl::before{left:51px}
+    ol.tl li{gap:14px;padding:11px 0}
+    ol.tl .t{flex:0 0 44px;font-size:12px}
+    ol.tl .dot{left:45px;top:16px;width:13px;height:13px}
+    ol.tl li.transit .dot{left:47px;top:18px;width:9px;height:9px}
+    ol.tl .c{padding-left:4px}
+    ol.tl .c b{font-size:15px;line-height:1.45}
+    ol.tl .c p{font-size:14px;line-height:1.65}
+    ol.tl li.transit .c b{font-size:13px}
+    .note{font-size:12.5px;line-height:1.55;padding:4px 10px}
+    .cost{font-size:12.5px}
+
+    .day-links{flex-direction:column;gap:8px;margin-top:16px;padding-top:14px}
+    .btn{width:100%;justify-content:center;min-height:46px;font-size:14px;padding:10px 15px}
+
+    .planb{padding:14px;border-radius:14px}
+    .planb h4{font-size:12px}
+    .planb ul{font-size:14px;padding-left:17px}
+    .planb li{margin:6px 0}
+
+    .chk li{padding:10px 0;font-size:14.5px;gap:12px;line-height:1.55}
+    .chk input{width:22px;height:22px;flex:0 0 22px;margin-top:1px}
+    .chk .where{font-size:12.5px;line-height:1.55;margin-top:3px}
+    .chk .where a{font-size:12.5px;display:inline-block;padding:2px 0}
+
+    .pill{font-size:11px;padding:3px 9px}
+
+    .do-dont{grid-template-columns:1fr;gap:12px}
+    .do-dont > div{padding:14px 15px;border-radius:16px;font-size:14px}
+    .do-dont h4{font-size:12px}
+    .do-dont ul{padding-left:17px}
+    .do-dont li{margin:6px 0}
+
+    /* tables become stacked cards */
+    .table-wrap{overflow:visible}
+    table.tbl{display:block;font-size:14px}
+    table.tbl thead{display:none}
+    table.tbl tbody,table.tbl tfoot{display:block}
+    table.tbl tr{display:block;padding:12px 15px;border-bottom:1px solid var(--line)}
+    table.tbl tbody tr:last-child{border-bottom:none}
+    table.tbl td{display:block;border:none;padding:0;text-align:left;vertical-align:baseline}
+    table.tbl td::before{content:attr(data-label);display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:900;margin:7px 0 1px}
+    table.tbl td:first-child::before{margin-top:0}
+    table.tbl td.cat{font-size:11.5px;font-weight:900;letter-spacing:.08em;color:var(--brand-2);margin-bottom:3px}
+    table.tbl td.cat::before{display:none}
+    table.tbl td[data-label="店名"],table.tbl td[data-label="項目"]{font-weight:800;font-size:15px;line-height:1.4}
+    table.tbl td[data-label="店名"]::before,table.tbl td[data-label="項目"]::before{display:none}
+    table.tbl td.num{text-align:left;white-space:normal}
+    table.tbl tfoot tr{background:#fdf6ea}
+    table.tbl tfoot td[colspan]{display:none}
+    table.tbl tfoot td{font-weight:900}
+
+    footer{padding:28px 0 92px;font-size:12px}
+  }
+
+  /* very small phones */
+  @media (max-width:380px){
+    .wrap{padding:0 13px}
+    h1{font-size:26px}
+    h2{font-size:18px}
+    .hero-facts{grid-template-columns:1fr}
+    ol.tl::before{left:45px}
+    ol.tl .t{flex:0 0 38px;font-size:11.5px}
+    ol.tl .dot{left:39px}
+    ol.tl li.transit .dot{left:41px}
+    .chk li{font-size:14px}
+    .day-badge{width:38px;height:38px;flex:0 0 38px;font-size:12px}
+  }
+
+  /* touch devices: no hover lift, bigger tap targets */
+  @media (hover:none){
+    .hotel-card:hover{transform:none;box-shadow:0 3px 0 rgba(46,38,32,.04), 0 18px 30px -22px rgba(46,38,32,.4)}
+    a{-webkit-tap-highlight-color:rgba(224,96,58,.12)}
+    .chk label a{padding:3px 0}
+  }
+  /* back to top */
+  .back-top{
+    position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));
+    width:48px;height:48px;border-radius:50%;border:none;padding:0;
+    background:var(--brand);color:#fff;font-size:19px;font-weight:900;line-height:1;
+    box-shadow:0 8px 22px -8px rgba(199,74,40,.75);
+    display:grid;place-items:center;z-index:80;cursor:pointer;
+    opacity:0;pointer-events:none;transform:translateY(10px);
+    transition:opacity .2s ease,transform .2s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .back-top.show{opacity:1;pointer-events:auto;transform:none}
+  .back-top:active{transform:scale(.94)}
+
+  @media print{
+    .back-top{display:none}
+    nav.toc{display:none}
+    body{background:#fff}
+    .day,.card{box-shadow:none;break-inside:avoid}
+    header.hero{background:#fdf7ee !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Taiwan 3D2N · 20–22 Nov 2026 · v1</span>
+    <h1>台北 <em>三天兩夜</em>，慢慢走</h1>
+    <p class="hero-sub">
+      西門住、大稻埕喝抹茶、大安吃晚餐、中山吃鐵板燒、士林看劇。
+      三個已訂位子是錨點，其餘按地理位置就近安插，每天附 Plan B，唔趕。
+    </p>
+
+    <a class="hotel-card" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8+%E8%A5%BF%E5%AF%A7%E5%8D%97%E8%B7%AF72%E4%B9%8B1%E8%99%9F" target="_blank" rel="noopener">
+      <span class="hotel-ico">🏠</span>
+      <span class="hotel-txt">
+        <b>日光樂居西門館 · 我們住這裡</b>
+        <span>台北市萬華區西寧南路72之1號 <b style="display:inline;font-size:12.5px;color:var(--brand-2)">6F</b>（西門新宿大樓）· 西門站 6 號出口步行 3 分鐘</span>
+        <span>☎ +886 2 2388 9978 · 20 Nov 入住</span>
+      </span>
+      <span class="hotel-go">開啟地圖 →</span>
+    </a>
+
+    <div class="hero-facts">
+      <div class="fact"><b>去程</b>CX488 · 20 Nov 08:00 HKG → 09:40 TPE</div>
+      <div class="fact"><b>回程</b>CX479 · 22 Nov 21:15 TPE → 23:15 HKG</div>
+      <div class="fact"><b>人數</b>2 位成人</div>
+      <div class="fact"><b>天氣</b>11 月台北 19–24°C，多雨，帶薄外套＋傘</div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#bookings">已訂項目</a>
+    <a href="#day1">Day 1 · 20 Nov</a>
+    <a href="#day2">Day 2 · 21 Nov</a>
+    <a href="#day3">Day 3 · 22 Nov</a>
+    <a href="#shopping">購物清單</a>
+    <a href="#food">餐廳資料庫</a>
+    <a href="#budget">預算</a>
+    <a href="#packing">行李</a>
+    <a href="#culture">文化禮儀</a>
+    <a href="#prep">出發前</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ FIXED BOOKINGS ============ -->
+<section id="bookings">
+  <div class="sec-head"><span class="sec-num">01</span><h2>🎟 已訂項目（不可移動的錨點）</h2></div>
+  <p class="sec-desc">以下 3 項已確認，行程以它們為中心向外安排。任何改動請先確認這 3 個時段。</p>
+
+  <div class="grid g3">
+    <div class="booking">
+      <div class="when">Day 1 · 20 Nov (Fri) 18:00</div>
+      <div class="what">煉丹爐 · 晚餐 2 位成人 <span class="tag fixed">已訂</span></div>
+      <div class="meta">
+        <div>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%85%89%E4%B8%B9%E7%88%90+%E5%A4%A7%E5%AE%89%E8%B7%AF%E4%B8%80%E6%AE%B519%E5%B7%B716%E8%99%9F%E4%B9%8B1" target="_blank" rel="noopener">大安區大安路一段19巷16號之1</a></div>
+        <div>🚇 捷運忠孝復興站，步行約 5 分鐘</div>
+        <div>💡 西門 → 忠孝復興（板南線 3 站，約 8 分鐘），17:35 出發就夠</div>
+      </div>
+    </div>
+
+    <div class="booking">
+      <div class="when">Day 2 · 21 Nov (Sat) 12:30</div>
+      <div class="what">魚貫鐵板燒 · 無菜單料理 <span class="tag fixed">已訂</span><span class="tag cash">只收現金</span></div>
+      <div class="meta">
+        <div>NT$2,000 + 10% / 位（2 位約 NT$4,400）</div>
+        <div>日本 A5 和牛、活龍蝦、活鮑魚，共 15 道</div>
+        <div>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E8%B2%AB%E9%90%B5%E6%9D%BF%E7%87%92+%E6%9E%97%E6%A3%AE%E5%8C%97%E8%B7%AF622%E8%99%9F" target="_blank" rel="noopener">中山區林森北路622號</a></div>
+        <div>🚇 捷運中山國小站，步行約 5 分鐘</div>
+        <div>💡 12:15 到場；預留 2 小時用餐</div>
+      </div>
+    </div>
+
+    <div class="booking">
+      <div class="when">Day 2 · 21 Nov (Sat) 18:00–19:30</div>
+      <div class="what">沉浸式劇場《士林YES！》 <span class="tag fixed">已訂</span></div>
+      <div class="meta">
+        <div>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8C%97%E8%A1%A8%E6%BC%94%E8%97%9D%E8%A1%93%E4%B8%AD%E5%BF%83+%E8%97%8D%E7%9B%92%E5%AD%90" target="_blank" rel="noopener">臺北表演藝術中心 藍盒子</a> · 士林區劍潭路1號</div>
+        <div>🚇 捷運劍潭站 3 號出口，步行 3 分鐘</div>
+        <div>🎫 <a href="https://www.opentix.life/account/ticket-info?id=2066798985966133249&status=upcoming&tab=TAB1" target="_blank" rel="noopener">OPENTIX 電子票券</a></div>
+        <div>💡 17:30 前到場取票；散場後直接去士林夜市</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section id="day1">
+  <div class="sec-head"><span class="sec-num">02</span><h2>🌤 Day 1 · 11/20（五）抵達 · 大稻埕 · 大安 · 西門</h2></div>
+  <p class="sec-desc">落地先到台北車站買千層蛋糕，回酒店放行李。下午走大稻埕／迪化街（抹茶＋堅果＋八仙果一次搞定），16:55 回酒店 check-in，17:35 出發去大安，18:00 煉丹爐晚餐，20:20 回西門町夜逛。</p>
+
+  <div class="day">
+    <div class="day-head">
+      <div class="day-badge">D1<span>FRI</span></div>
+      <div>
+        <h3 class="day-title">抵達 → 台北車站 → 大稻埕 → 大安 → 西門町</h3>
+        <p class="day-theme">步行＋捷運為主 · 傍晚跨區去大安 · 行李先放酒店</p>
+      </div>
+    </div>
+    <div class="day-body">
+      <ol class="tl">
+        <li><div class="t">09:40</div><div class="dot"></div><div class="c">
+          <b>抵達桃園機場 TPE 第一航廈</b>
+          <p>CX488 落地。入境＋提領行李約 45–60 分鐘。</p>
+        </div></li>
+        <li class="transit"><div class="t">10:40</div><div class="dot"></div><div class="c">
+          <b>機捷 → 台北車站</b>
+          <p>桃園機場捷運直達車約 38 分鐘。<span class="cost">NT$160 / 人</span></p>
+        </div></li>
+        <li><div class="t">11:20</div><div class="dot"></div><div class="c">
+          <b>花鳥川水果千層（台北車站 B1）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E9%B3%A5%E5%B7%9D%E6%B0%B4%E6%9E%9C%E5%8D%83%E5%B1%A4+%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B549%E8%99%9F" target="_blank" rel="noopener">中正區忠孝西路一段49號 B1（靠 M3 出口）</a> · 10:30–22:00</p>
+          <p>屏東檸檬千層，可先試吃；有小條裝，怕吃不完選小條。</p>
+          <span class="note">💡 先買再回酒店，避免最後一天趕飛機買不到</span>
+        </div></li>
+        <li class="transit"><div class="t">11:50</div><div class="dot"></div><div class="c">
+          <b>捷運 台北車站 → 西門（板南線 1 站）· 步行 3 分鐘</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8+%E8%A5%BF%E5%AF%A7%E5%8D%97%E8%B7%AF72%E4%B9%8B1%E8%99%9F" target="_blank" rel="noopener">西寧南路72之1號</a>，西門新宿大樓 <b>6 樓</b>（入口在騎樓，搭電梯上 6F）。寄放行李（正式 check-in 15:00）。</p>
+          <span class="note">💡 唔想行樓梯：西門站 6 號出口有電梯，出站後沿西寧南路直行約 3 分鐘</span>
+        </div></li>
+        <li><div class="t">12:30</div><div class="dot"></div><div class="c">
+          <b>午餐 · 西門町輕食</b>
+          <p>阿宗麵線（峨眉街8-1號）或 萬國滷味（漢中街）。第一天別吃太飽，晚上有訂位。</p>
+          <p class="cost">約 NT$150–250 / 人</p>
+        </div></li>
+        <li class="transit"><div class="t">14:00</div><div class="dot"></div><div class="c">
+          <b>捷運 西門 → 北門（1 站）</b>
+          <p>松山新店線，往大稻埕方向。</p>
+        </div></li>
+        <li><div class="t">14:15</div><div class="dot"></div><div class="c">
+          <b>八十八良葉舍 HATOYA（抹茶）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%8D%81%E5%85%AB%E8%89%AF%E8%91%89%E8%88%8D+%E5%8D%97%E4%BA%AC%E8%A5%BF%E8%B7%AF233%E5%B7%B75%E8%99%9F" target="_blank" rel="noopener">大同區南京西路233巷5號</a> · 10:00–18:00（週三休）</p>
+          <p>八十八抹茶拿鐵＋抹茶冰淇淋。無座位區，站著喝。</p>
+          <p class="cost">約 NT$150–250 / 人</p>
+        </div></li>
+        <li><div class="t">15:00</div><div class="dot"></div><div class="c">
+          <b>AKI Matcha Bar</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=AKI+Matcha+Bar+%E8%BF%AA%E5%8C%96%E8%A1%97%E4%B8%80%E6%AE%B5350%E8%99%9F" target="_blank" rel="noopener">大同區迪化街一段350號</a> · 11:00–17:00（週二休）</p>
+          <p>雲鶴（無奶無糖）、抹茶髒髒、大人味抹茶撒哈。線上訂位難搶，平日午後現場排約 20 分鐘。</p>
+          <span class="note">💡 兩家抹茶店很近，若時間緊只去 AKI（有座位）</span>
+        </div></li>
+        <li><div class="t">15:50</div><div class="dot"></div><div class="c">
+          <b>迪化街採購 · 爵林堅果坊</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%88%B5%E6%9E%97%E5%A0%85%E6%9E%9C%E5%9D%8A+%E8%BF%AA%E5%8C%96%E8%A1%97" target="_blank" rel="noopener">迪化街（與康永街都有分店）</a></p>
+          <p>必買：腰果酥、冰心蛋捲（伯爵茶味）。</p>
+        </div></li>
+        <li><div class="t">16:20</div><div class="dot"></div><div class="c">
+          <b>李錦利 八仙果（原個）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%8E%E9%8C%A6%E5%88%A9+%E5%85%AB%E4%BB%99%E6%9E%9C+%E8%BF%AA%E5%8C%96%E8%A1%97" target="_blank" rel="noopener">迪化街商圈</a></p>
+          <p>同場可順便看 魷布院、旺來山鳳梨酥。</p>
+        </div></li>
+        <li><div class="t">16:40</div><div class="dot"></div><div class="c">
+          <b>霞海城隍廟 · 大稻埕碼頭</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E9%9C%9E%E6%B5%B7%E5%9F%8E%E9%9A%8D%E5%BB%9F" target="_blank" rel="noopener">迪化街一段61號</a> · 碼頭日落約 17:10</p>
+        </div></li>
+        <li class="transit"><div class="t">16:55</div><div class="dot"></div><div class="c">
+          <b>捷運 北門 → 西門（1 站）· 回酒店 check-in</b>
+          <p>日光樂居西門館 梳洗換裝。晚餐在大安，餐廳較正式，建議換整齊一點。</p>
+        </div></li>
+        <li class="transit"><div class="t">17:35</div><div class="dot"></div><div class="c">
+          <b>出發 → 忠孝復興（板南線 3 站，約 8 分鐘）</b>
+          <p>西門 → 台北車站 → 忠孝新生 → 忠孝復興，2 號出口步行 5 分鐘到 19 巷。</p>
+          <span class="note">💡 想睇日落：17:10 大稻埕碼頭睇完，北門 → 忠孝復興（松山新店線轉板南線，約 14 分鐘），17:45 到</span>
+        </div></li>
+        <li class="fixed"><div class="t">18:00</div><div class="dot"></div><div class="c">
+          <b>🔒 煉丹爐 · 晚餐 2 位成人</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%85%89%E4%B8%B9%E7%88%90+%E5%A4%A7%E5%AE%89%E8%B7%AF%E4%B8%80%E6%AE%B519%E5%B7%B716%E8%99%9F%E4%B9%8B1" target="_blank" rel="noopener">大安區大安路一段19巷16號之1</a></p>
+          <p>捷運忠孝復興站步行約 5 分鐘。巷弄小店，建議 17:55 到。</p>
+          <p class="cost">預算約 NT$1,500–3,000 / 2 人</p>
+        </div></li>
+        <li class="transit"><div class="t">20:00</div><div class="dot"></div><div class="c">
+          <b>忠孝復興 → 西門（板南線 3 站，約 8 分鐘）</b>
+          <p>原線折返，唔使轉車。</p>
+        </div></li>
+        <li><div class="t">20:20</div><div class="dot"></div><div class="c">
+          <b>西門町夜逛</b>
+          <p>萬國滷味（漢中街）、西門紅樓、誠品生活西門、唐吉訶德西門店（24h，掃超市貨）。</p>
+          <span class="note">💡 唐吉訶德可一次買齊：北海鱈魚香絲、黑金剛花生、盛香珍瓜子、棉花棒</span>
+        </div></li>
+        <li><div class="t">21:30</div><div class="dot"></div><div class="c">
+          <b>回酒店休息</b>
+          <p>明天 12:30 鐵板燒（中山區），早上可睡到 08:30。</p>
+        </div></li>
+      </ol>
+
+      <div class="day-links">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8F%B0%E5%8C%97%E8%BB%8A%E7%AB%99&destination=%E7%85%89%E4%B8%B9%E7%88%90+%E5%A4%A7%E5%AE%89%E8%B7%AF%E4%B8%80%E6%AE%B519%E5%B7%B716%E8%99%9F%E4%B9%8B1&waypoints=%E8%8A%B1%E9%B3%A5%E5%B7%9D%E6%B0%B4%E6%9E%9C%E5%8D%83%E5%B1%A4%7C%E5%8C%97%E9%96%80%E7%AB%99%7C%E5%85%AB%E5%8D%81%E5%85%AB%E8%89%AF%E8%91%89%E8%88%8D%7CAKI+Matcha+Bar%7C%E8%BF%AA%E5%8C%96%E8%A1%97%E4%B8%80%E6%AE%B5%7C%E9%9C%9E%E6%B5%B7%E5%9F%8E%E9%9A%8D%E5%BB%9F%7C%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8&travelmode=transit" target="_blank" rel="noopener">🗺 Day 1 全日路線（Google Maps）</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8+%E8%A5%BF%E5%AF%A7%E5%8D%97%E8%B7%AF72%E4%B9%8B1%E8%99%9F" target="_blank" rel="noopener">🏠 回酒店</a>
+      </div>
+
+      <div class="planb">
+        <h4>Plan B · Day 1</h4>
+        <ul>
+          <li><b>落雨：</b>大稻埕改室內 → 迪化街只走 AKI＋爵林，之後去 誠品生活南西（中山站）或 台北地下街。</li>
+          <li><b>想放慢：</b>跳過八十八良葉舍，只留 AKI；多留時間在酒店休息。</li>
+          <li><b>想加景點：</b>北門站旁 台北郵局／撫臺街洋樓（免費，10 分鐘）。</li>
+          <li><b>18:00 煉丹爐取消：</b>改去 雙月食品社（青島東路，燉雞湯）或 甕中甕（湯品＋黑醋麵），兩者都在西門／中正區，回酒店更近。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section id="day2">
+  <div class="sec-head"><span class="sec-num">03</span><h2>🍵 Day 2 · 11/21（六）永康街 · 中山 · 東區 · 士林</h2></div>
+  <p class="sec-desc">三個重點：早上永康街買牛軋糖、12:30 魚貫鐵板燒（中山區林森北路，15 道，預留 2 小時）、18:00 北藝中心看劇。中間用 After Rain 咖啡＋東區購物填補，散場直接士林夜市。</p>
+
+  <div class="day">
+    <div class="day-head">
+      <div class="day-badge">D2<span>SAT</span></div>
+      <div>
+        <h3 class="day-title">東門 → 中山國小 → 東區 → 劍潭 → 士林</h3>
+        <p class="day-theme">淡水信義線＋中和新蘆線＋板南線 · 移動 5 段 · 2 個固定訂位</p>
+      </div>
+    </div>
+    <div class="day-body">
+      <ol class="tl">
+        <li><div class="t">08:30</div><div class="dot"></div><div class="c">
+          <b>早餐 · Celebread</b>
+          <p>📍 <a href="https://maps.app.goo.gl/JeY2Z5cCRQT2XYAL7?g_st=ic" target="_blank" rel="noopener">Celebread（Google Maps）</a></p>
+          <p>你指定的早午餐口袋名單。若不想跑，酒店附近 西門 有 永和豆漿／美而美。</p>
+        </div></li>
+        <li class="transit"><div class="t">09:40</div><div class="dot"></div><div class="c">
+          <b>捷運 → 東門站</b>
+          <p>西門 → 中正紀念堂（轉淡水信義線）→ 東門，約 12 分鐘。</p>
+        </div></li>
+        <li><div class="t">10:00</div><div class="dot"></div><div class="c">
+          <b>甜滿ヌガー L'Atelier Lotus（必買）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%94%9C%E6%BB%BF%E3%83%8C%E3%82%AC%E3%83%BC+L%27Atelier+Lotus+%E6%B0%B8%E5%BA%B7%E8%A1%9731%E5%B7%B7" target="_blank" rel="noopener">永康街31巷</a></p>
+          <p>香蔥蘇打餅＋軟 Q 牛軋糖，常溫約 30 天。現做售完即止、限購盒數、多收現金。</p>
+          <span class="note">⚠️ 熱門排隊店，建議 10:00 開門就到；帶足現金</span>
+        </div></li>
+        <li><div class="t">10:45</div><div class="dot"></div><div class="c">
+          <b>永康街散步 · 大安森林公園</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%B0%B8%E5%BA%B7%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">永康公園</a> → <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%AE%89%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">大安森林公園</a>（步行 12 分鐘）</p>
+          <p>11 月落羽松開始轉色，適合拍照。也可順路看 榕錦時光生活園區。</p>
+        </div></li>
+        <li class="transit"><div class="t">11:50</div><div class="dot"></div><div class="c">
+          <b>捷運 → 中山國小站</b>
+          <p>東門 → 民權西路（淡水信義線 4 站）→ 轉中和新蘆線 → 中山國小（1 站），約 14 分鐘。</p>
+        </div></li>
+        <li class="fixed"><div class="t">12:30</div><div class="dot"></div><div class="c">
+          <b>🔒 魚貫鐵板燒 · 無菜單 15 道</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E8%B2%AB%E9%90%B5%E6%9D%BF%E7%87%92+%E6%9E%97%E6%A3%AE%E5%8C%97%E8%B7%AF622%E8%99%9F" target="_blank" rel="noopener">中山區林森北路622號</a></p>
+          <p>A5 和牛、活龍蝦、活鮑魚。不吃牛可換食材（訂位時已備註為佳）。</p>
+          <p class="cost">NT$2,000 + 10% / 位 → 2 位約 NT$4,400（只收現金）</p>
+          <span class="note">💡 預留 2 小時，14:30 結束</span>
+        </div></li>
+        <li class="transit"><div class="t">14:40</div><div class="dot"></div><div class="c">
+          <b>步行 → After Rain（約 12 分鐘）</b>
+          <p>沿 民權東路 往西走，過 復興北路 就到 160 巷。</p>
+        </div></li>
+        <li><div class="t">15:00</div><div class="dot"></div><div class="c">
+          <b>After Rain Dessert and Coffee</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=After+Rain+Dessert+and+Coffee+%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B5160%E5%B7%B719%E5%BC%8416%E8%99%9F" target="_blank" rel="noopener">民權東路三段160巷19弄16號</a> · 12:00–18:00（不定期休）</p>
+          <p>需先看 IG 每月時間表。若時間緊，直接跳去東區百貨內用咖啡。</p>
+        </div></li>
+        <li class="transit"><div class="t">15:40</div><div class="dot"></div><div class="c">
+          <b>捷運 → 忠孝敦化</b>
+          <p>中山國中（文湖線）→ 南京復興 → 忠孝復興（2 站）→ 轉板南線 → 忠孝敦化（1 站），約 12 分鐘。</p>
+        </div></li>
+        <li><div class="t">16:00</div><div class="dot"></div><div class="c">
+          <b>東區購物 · 藥妝／內衣</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%B6%E9%9B%85+%E5%BF%A0%E5%AD%9D%E6%95%A6%E5%8C%96" target="_blank" rel="noopener">寶雅／康是美（忠孝敦化）</a> · <a href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E9%98%BF%E5%A7%A8%E5%85%A7%E8%A1%A3" target="_blank" rel="noopener">玉阿姨內衣</a></p>
+          <p>清單：Solone 雲朵舒芙蕾海綿、植漱口×聶永真聯乘款、台灣製棉花棒、內衣（必買）。</p>
+          <p>也可逛 SOGO 忠孝館、微風廣場。</p>
+          <span class="note">💡 只有 1 小時，集中買清單上的東西，其他留 Day 3 北車</span>
+        </div></li>
+        <li class="transit"><div class="t">17:00</div><div class="dot"></div><div class="c">
+          <b>捷運 → 劍潭站</b>
+          <p>忠孝敦化（板南線）→ 台北車站 → 轉淡水信義線 → 劍潭，約 22 分鐘。</p>
+        </div></li>
+        <li class="fixed"><div class="t">18:00</div><div class="dot"></div><div class="c">
+          <b>🔒 沉浸式劇場《士林YES！》</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8C%97%E8%A1%A8%E6%BC%94%E8%97%9D%E8%A1%93%E4%B8%AD%E5%BF%83+%E8%97%8D%E7%9B%92%E5%AD%90" target="_blank" rel="noopener">臺北表演藝術中心 藍盒子</a> · 劍潭路1號</p>
+          <p>18:00–19:30。🎫 <a href="https://www.opentix.life/account/ticket-info?id=2066798985966133249&status=upcoming&tab=TAB1" target="_blank" rel="noopener">OPENTIX 票券</a></p>
+          <span class="note">💡 17:30 到場，先取票／上洗手間</span>
+        </div></li>
+        <li><div class="t">19:45</div><div class="dot"></div><div class="c">
+          <b>士林夜市晚餐</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E5%A4%9C%E5%B8%82" target="_blank" rel="noopener">士林夜市</a>（劍潭站步行 5 分鐘）</p>
+          <p>推薦：蚵仔煎、大雞排、青蛙下蛋、大腸包小腸、豪大大雞排。</p>
+          <p class="cost">約 NT$400–600 / 2 人</p>
+        </div></li>
+        <li class="transit"><div class="t">21:15</div><div class="dot"></div><div class="c">
+          <b>捷運回西門</b>
+          <p>劍潭 → 台北車站（淡水信義線）→ 轉板南線 → 西門，約 20 分鐘。</p>
+        </div></li>
+        <li><div class="t">21:45</div><div class="dot"></div><div class="c">
+          <b>回酒店</b>
+          <p>明天要退房＋趕 21:15 航班，今晚先整理行李。</p>
+        </div></li>
+      </ol>
+
+      <div class="day-links">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8+%E8%A5%BF%E5%AF%A7%E5%8D%97%E8%B7%AF72%E4%B9%8B1%E8%99%9F&destination=%E8%87%BA%E5%8C%97%E8%A1%A8%E6%BC%94%E8%97%9D%E8%A1%93%E4%B8%AD%E5%BF%83&waypoints=%E6%B0%B8%E5%BA%B7%E8%A1%9731%E5%B7%B7%7C%E5%A4%A7%E5%AE%89%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%7C%E9%AD%9A%E8%B2%AB%E9%90%B5%E6%9D%BF%E7%87%92+%E6%9E%97%E6%A3%AE%E5%8C%97%E8%B7%AF622%E8%99%9F%7CAfter+Rain+Dessert+and+Coffee%7C%E5%BF%A0%E5%AD%9D%E6%95%A6%E5%8C%96%E7%AB%99&travelmode=transit" target="_blank" rel="noopener">🗺 Day 2 全日路線（Google Maps）</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E8%B2%AB%E9%90%B5%E6%9D%BF%E7%87%92+%E6%9E%97%E6%A3%AE%E5%8C%97%E8%B7%AF622%E8%99%9F" target="_blank" rel="noopener">🥩 魚貫鐵板燒</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E5%8C%97%E8%A1%A8%E6%BC%94%E8%97%9D%E8%A1%93%E4%B8%AD%E5%BF%83+%E8%97%8D%E7%9B%92%E5%AD%90" target="_blank" rel="noopener">🎭 北藝中心</a>
+      </div>
+
+      <div class="planb">
+        <h4>Plan B · Day 2</h4>
+        <ul>
+          <li><b>甜滿ヌガー 排隊太長：</b>改去 板橋 方人也鮮奶麻糬（雙十路三段20號，12:30–20:30，週一休，江子翠站）＋ 板橋 Quartet Coffee 買咖啡豆。</li>
+          <li><b>鐵板燒吃太飽：</b>跳過 After Rain，直接 15:00 去 誠品生活南西／赤峰街，16:45 出發劍潭。</li>
+          <li><b>想加抹茶：</b>把 八十八良葉舍 移到今天 15:00（中山區→大稻埕不順，建議留在 Day 1）。</li>
+          <li><b>劇場前想靜一點：</b>北藝中心 2F 有咖啡廳，17:30 到場後直接上去坐。</li>
+          <li><b>士林夜市人多：</b>改 劍潭 站旁 士林市場 B1 美食區（有座位）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section id="day3">
+  <div class="sec-head"><span class="sec-num">04</span><h2>🧳 Day 3 · 11/22（日）松山採購 · 回程</h2></div>
+  <p class="sec-desc">退房後寄放行李，走「南京三民 → 民生社區 → 南京復興」一條線掃鳳梨酥，午餐吃小籠包，回酒店取行李，18:00 前到機場。21:15 起飛。</p>
+
+  <div class="day">
+    <div class="day-head">
+      <div class="day-badge">D3<span>SUN</span></div>
+      <div>
+        <h3 class="day-title">阜杭豆漿 → 佳德 → 微熱山丘 → 京鼎小館 → 機場</h3>
+        <p class="day-theme">松山線一條線 · 行李寄酒店 · 18:00 抵 TPE</p>
+      </div>
+    </div>
+    <div class="day-body">
+      <ol class="tl">
+        <li><div class="t">07:30</div><div class="dot"></div><div class="c">
+          <b>阜杭豆漿（華山市場 2F）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E9%98%9C%E6%9D%AD%E8%B1%86%E6%BC%BF+%E8%8F%AF%E5%B1%B1%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener">中正區忠孝東路一段108號2樓</a> · 05:30–12:30（週一休）</p>
+          <p>厚餅夾蛋＋鹹豆漿。週日排隊 30–60 分鐘，越早越好。</p>
+          <p class="cost">約 NT$150 / 2 人</p>
+          <span class="note">💡 若不想排隊：酒店附近 永和豆漿 或 美而美</span>
+        </div></li>
+        <li><div class="t">09:00</div><div class="dot"></div><div class="c">
+          <b>回酒店退房 · 寄放行李</b>
+          <p>日光樂居西門館 可寄放至 17:00（6F 櫃檯）。貴重物品隨身。</p>
+        </div></li>
+        <li class="transit"><div class="t">09:45</div><div class="dot"></div><div class="c">
+          <b>捷運 西門 → 南京三民</b>
+          <p>西門 → 台北車站 → 轉松山新店線 → 南京三民，約 18 分鐘。</p>
+        </div></li>
+        <li><div class="t">10:10</div><div class="dot"></div><div class="c">
+          <b>佳德鳳梨酥</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E4%BD%B3%E5%BE%B7%E9%B3%B3%E6%A2%A8%E9%85%A5+%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF%E4%BA%94%E6%AE%B588%E8%99%9F" target="_blank" rel="noopener">松山區南京東路五段88號</a></p>
+          <p>鳳梨酥、蔓越莓酥。排隊名店，建議 10:00 開門就到。</p>
+          <p class="cost">約 NT$400–800 / 盒</p>
+        </div></li>
+        <li><div class="t">10:50</div><div class="dot"></div><div class="c">
+          <b>微熱山丘 民生公園店</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%BE%AE%E7%86%B1%E5%B1%B1%E4%B8%98+%E6%B0%91%E7%94%9F%E5%85%AC%E5%9C%92%E5%BA%97" target="_blank" rel="noopener">松山區民生東路五段36巷4弄1號</a></p>
+          <p>入座奉茶＋一整塊鳳梨酥試吃（免費）。買土鳳梨酥禮盒。</p>
+          <p class="cost">約 NT$420 / 10 入</p>
+        </div></li>
+        <li><div class="t">11:40</div><div class="dot"></div><div class="c">
+          <b>民生社區散步</b>
+          <p>富錦街綠廊、富錦樹咖啡。11 月天氣涼，走路舒服。</p>
+        </div></li>
+        <li class="transit"><div class="t">12:15</div><div class="dot"></div><div class="c">
+          <b>捷運 → 南京復興</b>
+          <p>南京三民 → 南京復興（松山線 1 站）。</p>
+        </div></li>
+        <li><div class="t">12:30</div><div class="dot"></div><div class="c">
+          <b>午餐 · 京鼎小館（小籠包）</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%BC%8E%E5%B0%8F%E9%A4%A8+%E5%8D%97%E4%BA%AC%E5%BE%A9%E8%88%88" target="_blank" rel="noopener">南京復興站周邊</a></p>
+          <p>替代：犁園湯包館（南京復興）、小上海林師傅（南京三民）、濟南鮮湯包（忠孝新生）。</p>
+          <p class="cost">約 NT$600–900 / 2 人</p>
+        </div></li>
+        <li><div class="t">14:00</div><div class="dot"></div><div class="c">
+          <b>中山站 · 赤峰街／誠品生活南西</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%AA%A0%E5%93%81%E7%94%9F%E6%B4%BB%E5%8D%97%E8%A5%BF" target="_blank" rel="noopener">誠品生活南西</a> · <a href="https://www.google.com/maps/search/?api=1&query=%E8%B5%A4%E5%B3%B0%E8%A1%97" target="_blank" rel="noopener">赤峰街</a></p>
+          <p>最後補貨：如邑堂太陽餅（鐵觀音／抹茶味）、鐵觀音蛋黃酥、濃濃本家茶酥。</p>
+          <span class="note">💡 如邑堂台北車站 B1 也有櫃，可留到最後買</span>
+        </div></li>
+        <li><div class="t">15:30</div><div class="dot"></div><div class="c">
+          <b>台北車站 · 最後補貨</b>
+          <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%A6%82%E9%82%91%E5%A0%82+%E5%8F%B0%E5%8C%97%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">如邑堂（台北車站 B1）</a> · 花鳥川千層（若 Day 1 沒買）</p>
+          <p>全聯／家樂福 買：台灣米、新竹米粉、刀削麵、原萃茶、水果（鳳梨、芭樂、蓮霧）。</p>
+        </div></li>
+        <li><div class="t">16:30</div><div class="dot"></div><div class="c">
+          <b>回酒店取行李</b>
+          <p>台北車站 → 西門（1 站）或步行 12 分鐘。</p>
+        </div></li>
+        <li class="transit"><div class="t">17:15</div><div class="dot"></div><div class="c">
+          <b>機捷 → 桃園機場 T1</b>
+          <p>台北車站 A1 直達車 38 分鐘。<span class="cost">NT$160 / 人</span></p>
+          <span class="note">⚠️ 行李多建議 17:00 出發，或直接叫車（約 NT$1,100）</span>
+        </div></li>
+        <li><div class="t">18:00</div><div class="dot"></div><div class="c">
+          <b>抵達 TPE T1 · CX479 報到</b>
+          <p>21:15 起飛，建議 3 小時前到。辦退稅（若適用）。</p>
+        </div></li>
+        <li><div class="t">18:45</div><div class="dot"></div><div class="c">
+          <b>入閘後免稅區補貨</b>
+          <p>菊之鱻 烏金 XO 醬（足料、有烏魚子粒）、檸檬大叔檸檬磚。</p>
+          <span class="note">💡 Kavalan 威士忌在市區超市／酒鋪買比機場免稅便宜</span>
+        </div></li>
+        <li><div class="t">21:15</div><div class="dot"></div><div class="c">
+          <b>CX479 起飛 → 23:15 抵港</b>
+          <p>飛行 2 小時。</p>
+        </div></li>
+      </ol>
+
+      <div class="day-links">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=%E6%97%A5%E5%85%89%E6%A8%82%E5%B1%85%E8%A5%BF%E9%96%80%E9%A4%A8+%E8%A5%BF%E5%AF%A7%E5%8D%97%E8%B7%AF72%E4%B9%8B1%E8%99%9F&destination=%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%E7%AC%AC%E4%B8%80%E8%88%AA%E5%BB%88&waypoints=%E9%98%9C%E6%9D%AD%E8%B1%86%E6%BC%BF%7C%E4%BD%B3%E5%BE%B7%E9%B3%B3%E6%A2%A8%E9%85%A5%7C%E5%BE%AE%E7%86%B1%E5%B1%B1%E4%B8%98%E6%B0%91%E7%94%9F%E5%85%AC%E5%9C%92%E5%BA%97%7C%E4%BA%AC%E9%BC%8E%E5%B0%8F%E9%A4%A8%7C%E8%AA%A0%E5%93%81%E7%94%9F%E6%B4%BB%E5%8D%97%E8%A5%BF&travelmode=transit" target="_blank" rel="noopener">🗺 Day 3 全日路線（Google Maps）</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%E7%AC%AC%E4%B8%80%E8%88%AA%E5%BB%88" target="_blank" rel="noopener">✈️ 桃園機場 T1</a>
+      </div>
+
+      <div class="planb">
+        <h4>Plan B · Day 3</h4>
+        <ul>
+          <li><b>不想排阜杭：</b>酒店附近吃早餐，09:30 直接出發南京三民，多留時間逛民生社區。</li>
+          <li><b>想加景點：</b>象山步道（捷運象山站，來回 1 小時，看 101）→ 但需 15:30 前回到酒店，較趕。</li>
+          <li><b>想泡溫泉：</b>北投（新北投站）半日 → 與採購衝突，建議放棄。</li>
+          <li><b>行李太多：</b>叫車直達機場（約 NT$1,100–1,300，40 分鐘），17:00 出發。</li>
+          <li><b>佳德排隊太長：</b>改 微熱山丘 或 台北車站 B1 買 如邑堂／旺來山。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOPPING ============ -->
+<section id="shopping">
+  <div class="sec-head"><span class="sec-num">05</span><h2>🛍 購物清單（按地點分組）</h2></div>
+  <p class="sec-desc">已按「哪一天順路」重新分組，避免為了一件貨跑半個台北。勾選狀態會存在瀏覽器。</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">🍍 鳳梨酥 / 糕餅 <span class="pill">Day 3 主場</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s1"><label for="s1">佳德鳳梨酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E4%BD%B3%E5%BE%B7%E9%B3%B3%E6%A2%A8%E9%85%A5+%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF%E4%BA%94%E6%AE%B588%E8%99%9F" target="_blank" rel="noopener">南京東路五段88號</a> · Day 3 10:10</span></label></li>
+        <li><input type="checkbox" id="s2"><label for="s2">微熱山丘土鳳梨酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%BE%AE%E7%86%B1%E5%B1%B1%E4%B8%98+%E6%B0%91%E7%94%9F%E5%85%AC%E5%9C%92%E5%BA%97" target="_blank" rel="noopener">民生東路五段36巷4弄1號</a> · Day 3 10:50（免費試吃）</span></label></li>
+        <li><input type="checkbox" id="s3"><label for="s3">如邑堂太陽餅（鐵觀音／抹茶）＋鐵觀音蛋黃酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%A6%82%E9%82%91%E5%A0%82+%E5%8F%B0%E5%8C%97%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">台北車站 B1</a> · Day 3 15:30</span></label></li>
+        <li><input type="checkbox" id="s4"><label for="s4">濃濃本家茶酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%BF%83%E6%BF%83%E6%9C%AC%E5%AE%B6%E8%8C%B6%E9%85%A5" target="_blank" rel="noopener">Google Maps 搜尋</a></span></label></li>
+        <li><input type="checkbox" id="s5"><label for="s5">旺來山鳳梨酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%97%BA%E4%BE%86%E5%B1%B1%E9%B3%B3%E6%A2%A8%E9%85%A5" target="_blank" rel="noopener">Google Maps 搜尋</a> · 迪化街順路</span></label></li>
+        <li><input type="checkbox" id="s6"><label for="s6">躉泰大甲芋頭水晶酥<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%BA%89%E6%B3%B0%E5%A4%A7%E7%94%B2%E8%8A%8B%E9%A0%AD%E6%B0%B4%E6%99%B6%E9%85%A5" target="_blank" rel="noopener">Google Maps 搜尋</a></span></label></li>
+        <li><input type="checkbox" id="s7"><label for="s7">名板奇 原味夏威夷豆塔<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%90%8D%E6%9D%BF%E5%A5%87+%E5%A4%8F%E5%A8%81%E5%A4%B7%E8%B1%86%E5%A1%94" target="_blank" rel="noopener">Google Maps 搜尋</a></span></label></li>
+        <li><input type="checkbox" id="s8"><label for="s8">宮原眼科鳳梨酥<span class="where">⚠️ 僅台中，本次不順路 — 建議跳過</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">🍵 茶 / 咖啡 / 酒 <span class="pill">Day 1 + 3</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s9"><label for="s9">東方美人茶、阿里山高山茶<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%BF%AA%E5%8C%96%E8%A1%97+%E8%8C%B6%E8%A1%8C" target="_blank" rel="noopener">迪化街茶行</a> · Day 1 16:20</span></label></li>
+        <li><input type="checkbox" id="s10"><label for="s10">Kavalan 威士忌<span class="where">📍 市區超市／酒鋪（比機場免稅便宜）· Day 1 唐吉訶德</span></label></li>
+        <li><input type="checkbox" id="s11"><label for="s11">板橋 Quartet Coffee 咖啡豆<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=Quartet+Coffee+%E6%9D%BF%E6%A9%8B" target="_blank" rel="noopener">板橋</a> · Plan B 才去</span></label></li>
+        <li><input type="checkbox" id="s12"><label for="s12">檸檬大叔 檸檬磚<span class="where">📍 機場免稅區 · Day 3 18:45</span></label></li>
+        <li><input type="checkbox" id="s13"><label for="s13">菊之鱻 烏金 XO 醬<span class="where">📍 桃園機場入閘後 · Day 3 18:45</span></label></li>
+        <li><input type="checkbox" id="s14"><label for="s14">OATGOOD granola<span class="where">🌐 <a href="https://www.oatgood.com/categories/granola" target="_blank" rel="noopener">oatgood.com</a> · 可寄香港，出發前網購</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">🥜 零食 / 乾貨 <span class="pill">Day 1 迪化街</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s15"><label for="s15">爵林堅果坊：腰果酥、冰心蛋捲（伯爵茶）<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%88%B5%E6%9E%97%E5%A0%85%E6%9E%9C%E5%9D%8A+%E8%BF%AA%E5%8C%96%E8%A1%97" target="_blank" rel="noopener">迪化街／康永街</a> · Day 1 15:50</span></label></li>
+        <li><input type="checkbox" id="s16"><label for="s16">李錦利 八仙果（原個）<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%8E%E9%8C%A6%E5%88%A9+%E5%85%AB%E4%BB%99%E6%9E%9C" target="_blank" rel="noopener">迪化街</a> · Day 1 16:20</span></label></li>
+        <li><input type="checkbox" id="s17"><label for="s17">魷布院<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E9%AD%B7%E5%B8%83%E9%99%A2" target="_blank" rel="noopener">Google Maps 搜尋</a></span></label></li>
+        <li><input type="checkbox" id="s18"><label for="s18">果漾莊園微醺果乾（香橘乾）、食源縱谷香橙乾<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%9E%9C%E6%BC%BE%E8%8E%8A%E5%9C%92+%E5%BE%AE%E9%86%BA%E6%9E%9C%E4%B9%BE" target="_blank" rel="noopener">Google Maps 搜尋</a></span></label></li>
+        <li><input type="checkbox" id="s19"><label for="s19">萬國滷味<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%90%AC%E5%9C%8B%E6%BB%B7%E5%91%B3+%E6%BC%A2%E4%B8%AD%E8%A1%97" target="_blank" rel="noopener">西門町漢中街</a> · Day 1 20:20</span></label></li>
+        <li><input type="checkbox" id="s20"><label for="s20">北海鱈魚香絲、黑金剛花生、盛香珍瓜子<span class="where">📍 唐吉訶德西門店（24h）· Day 1 20:20</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">🧴 超市 / 藥妝 / 日用品 <span class="pill">Day 2 東區</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s21"><label for="s21">Solone 雲朵舒芙蕾海綿<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%B6%E9%9B%85+%E5%BF%A0%E5%AD%9D%E6%95%A6%E5%8C%96" target="_blank" rel="noopener">寶雅／康是美</a> · Day 2 16:00</span></label></li>
+        <li><input type="checkbox" id="s22"><label for="s22">植漱口 × 聶永真聯乘款<span class="where">📍 康是美／屈臣氏 · Day 2 16:00</span></label></li>
+        <li><input type="checkbox" id="s23"><label for="s23">台灣製棉花棒<span class="where">📍 全聯／寶雅 · Day 2 或 Day 3</span></label></li>
+        <li><input type="checkbox" id="s24"><label for="s24">內衣（玉阿姨）<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E9%98%BF%E5%A7%A8%E5%85%A7%E8%A1%A3" target="_blank" rel="noopener">Google Maps 搜尋</a> · 你標記「一定要」</span></label></li>
+        <li><input type="checkbox" id="s25"><label for="s25">台灣米、新竹米粉、刀削麵<span class="where">📍 全聯／家樂福 · Day 3 15:30（注意 15kg 行李限額）</span></label></li>
+        <li><input type="checkbox" id="s26"><label for="s26">台灣原萃茶<span class="where">📍 便利商店 · 香港也有，視行李重量</span></label></li>
+        <li><input type="checkbox" id="s27"><label for="s27">水果：鳳梨、芭樂、蓮霧、芋頭<span class="where">📍 全聯／傳統市場 · ⚠️ 香港禁止攜帶部分生果，出發前查海關</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">🍰 甜點 / 抹茶 <span class="pill">Day 1 + 2</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s28"><label for="s28">花鳥川水果千層（檸檬）<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E9%B3%A5%E5%B7%9D%E6%B0%B4%E6%9E%9C%E5%8D%83%E5%B1%A4" target="_blank" rel="noopener">台北車站 B1（M3 出口）</a> · Day 1 11:20</span></label></li>
+        <li><input type="checkbox" id="s29"><label for="s29">甜滿ヌガー L'Atelier Lotus<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E7%94%9C%E6%BB%BF%E3%83%8C%E3%82%AC%E3%83%BC+%E6%B0%B8%E5%BA%B7%E8%A1%9731%E5%B7%B7" target="_blank" rel="noopener">永康街31巷</a> · Day 2 10:00（限購、收現金）</span></label></li>
+        <li><input type="checkbox" id="s30"><label for="s30">八十八良葉舍 抹茶<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%8D%81%E5%85%AB%E8%89%AF%E8%91%89%E8%88%8D" target="_blank" rel="noopener">南京西路233巷5號</a> · Day 1 14:15</span></label></li>
+        <li><input type="checkbox" id="s31"><label for="s31">AKI Matcha Bar<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=AKI+Matcha+Bar" target="_blank" rel="noopener">迪化街一段350號</a> · Day 1 15:00</span></label></li>
+        <li><input type="checkbox" id="s32"><label for="s32">方人也鮮奶麻糬<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B9%E4%BA%BA%E4%B9%9F%E9%AE%AE%E5%A5%B6%E9%BA%BB%E7%B3%8D" target="_blank" rel="noopener">板橋雙十路三段20號</a> · 12:30–20:30 週一休 · Plan B</span></label></li>
+        <li><input type="checkbox" id="s33"><label for="s33">After Rain Dessert and Coffee<span class="where">📍 <a href="https://www.google.com/maps/search/?api=1&query=After+Rain+Dessert+and+Coffee" target="_blank" rel="noopener">民權東路三段160巷19弄16號</a> · Day 2 15:00（先查 IG）</span></label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 6px;font-size:15px">📚 網購 / 出發前 <span class="pill gold">出發前 2 日</span></h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="s34"><label for="s34">博客來訂書 → 超商取貨<span class="where">🌐 <a href="https://www.books.com.tw" target="_blank" rel="noopener">books.com.tw</a> · 出發前 2 日下單，選 7-11／全家取貨</span></label></li>
+        <li><input type="checkbox" id="s35"><label for="s35">OATGOOD granola<span class="where">🌐 <a href="https://www.oatgood.com/categories/granola" target="_blank" rel="noopener">oatgood.com</a> · 可寄香港</span></label></li>
+        <li><input type="checkbox" id="s36"><label for="s36">Matcha Tasting by Naka Matcha<span class="where">📱 IG <a href="https://www.instagram.com/charlotte0901" target="_blank" rel="noopener">@charlotte0901</a> bio 內 Line 報名</span></label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOD ============ -->
+<section id="food">
+  <div class="sec-head"><span class="sec-num">06</span><h2>🍜 餐廳資料庫（按捷運站分組）</h2></div>
+  <p class="sec-desc">你的 20 家口袋名單＋其他食店，按捷運站整理，方便臨時替換。已排入行程的標 ✅。</p>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="table-wrap">
+    <table class="tbl">
+      <thead>
+        <tr><th>類別</th><th>店名</th><th>捷運 / 位置</th><th>狀態</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat" rowspan="5">中式麵點</td><td data-label="店名">京鼎小館</td><td data-label="捷運 / 位置">南京復興</td><td data-label="狀態"><span class="pill">✅ Day 3 午餐</span></td></tr>
+        <tr><td data-label="店名">濟南鮮湯包</td><td data-label="捷運 / 位置">忠孝新生</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">小上海林師傅</td><td data-label="捷運 / 位置">南京三民</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">金品茶樓</td><td data-label="捷運 / 位置">中山</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">犁園湯包館</td><td data-label="捷運 / 位置">南京復興</td><td data-label="狀態">備選</td></tr>
+
+        <tr><td class="cat" rowspan="5">質感早午餐</td><td data-label="店名">Mercer Brunch</td><td data-label="捷運 / 位置">忠孝敦化</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">M One Cafe</td><td data-label="捷運 / 位置">大安</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">Tamed Fox</td><td data-label="捷運 / 位置">信義安和 / 市政府</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">AUFGLET</td><td data-label="捷運 / 位置">忠孝敦化</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">Brun</td><td data-label="捷運 / 位置">忠孝敦化</td><td data-label="狀態">備選</td></tr>
+
+        <tr><td class="cat" rowspan="5">預約困難義式</td><td data-label="店名">花滔廚房</td><td data-label="捷運 / 位置">小巨蛋</td><td data-label="狀態">需提早訂</td></tr>
+        <tr><td data-label="店名">黑馬小廚</td><td data-label="捷運 / 位置">南京三民</td><td data-label="狀態">需提早訂</td></tr>
+        <tr><td data-label="店名">鯡魚工作室 Herring Studio</td><td data-label="捷運 / 位置">內湖</td><td data-label="狀態">不順路</td></tr>
+        <tr><td data-label="店名">SAPORI</td><td data-label="捷運 / 位置">南京復興</td><td data-label="狀態">需提早訂</td></tr>
+        <tr><td data-label="店名">Pecora</td><td data-label="捷運 / 位置">天母</td><td data-label="狀態">不順路</td></tr>
+
+        <tr><td class="cat" rowspan="5">經典義式 / 西式</td><td data-label="店名">TUTTO BELLO</td><td data-label="捷運 / 位置">中山國小</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">PICO PICO</td><td data-label="捷運 / 位置">信義安和</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">ANTICO FORNI 老烤箱</td><td data-label="捷運 / 位置">科技大樓</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">大嗑西式餐館 Dake Bistro</td><td data-label="捷運 / 位置">忠孝新生</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">Confitrémi 黑米</td><td data-label="捷運 / 位置">萬隆</td><td data-label="狀態">不順路</td></tr>
+
+        <tr><td class="cat" rowspan="4">湯品 / 藥膳</td><td data-label="店名">雙月食品社（燉雞）</td><td data-label="捷運 / 位置">善導寺 / 青島東路</td><td data-label="狀態">Day 1 Plan B</td></tr>
+        <tr><td data-label="店名">正一堂養生膳食坊（藥膳）</td><td data-label="捷運 / 位置">台北市區</td><td data-label="狀態">備選</td></tr>
+        <tr><td data-label="店名">甕中甕（湯品、黑醋麵）</td><td data-label="捷運 / 位置">台北市區</td><td data-label="狀態">Day 1 Plan B</td></tr>
+        <tr><td data-label="店名">阜杭豆漿</td><td data-label="捷運 / 位置">善導寺（華山市場）</td><td data-label="狀態"><span class="pill">✅ Day 3 早餐</span></td></tr>
+
+        <tr><td class="cat" rowspan="2">酒吧</td><td data-label="店名">香草窗（現摘香草調酒）</td><td data-label="捷運 / 位置">台北市區</td><td data-label="狀態">Day 1 晚間可選</td></tr>
+        <tr><td data-label="店名">梄時（茶味酒、Tiramisu）</td><td data-label="捷運 / 位置">台北市區</td><td data-label="狀態">Day 1 晚間可選</td></tr>
+
+        <tr><td class="cat" rowspan="2">已訂</td><td data-label="店名">煉丹爐</td><td data-label="捷運 / 位置">大安（大安路一段19巷16號之1）</td><td data-label="狀態"><span class="pill warn">🔒 Day 1 18:00</span></td></tr>
+        <tr><td data-label="店名">魚貫鐵板燒</td><td data-label="捷運 / 位置">中山（林森北路622號）</td><td data-label="狀態"><span class="pill warn">🔒 Day 2 12:30</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUDGET ============ -->
+<section id="budget">
+  <div class="sec-head"><span class="sec-num">07</span><h2>💰 預算估算（2 人 · 不含機票住宿）</h2></div>
+  <p class="sec-desc">以中價位、2 人同行估算。已訂的鐵板燒 NT$4,400 為固定支出。建議另備 15% 緩衝。</p>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="table-wrap">
+    <table class="tbl">
+      <thead>
+        <tr><th>項目</th><th>說明</th><th class="num">NT$</th><th class="num">HKD 約</th></tr>
+      </thead>
+      <tbody>
+        <tr><td data-label="項目">煉丹爐（已訂）</td><td data-label="說明">Day 1 18:00 · 2 人，中價位</td><td class="num" data-label="NT$">2,500</td><td class="num" data-label="HKD 約">610</td></tr>
+        <tr><td data-label="項目">魚貫鐵板燒（已訂）</td><td data-label="說明">NT$2,000+10% × 2</td><td class="num" data-label="NT$">4,400</td><td class="num" data-label="HKD 約">1,075</td></tr>
+        <tr><td data-label="項目">其他餐飲</td><td data-label="說明">Day1 午＋夜市、Day2 早＋夜市、Day3 早＋午</td><td class="num" data-label="NT$">3,200</td><td class="num" data-label="HKD 約">780</td></tr>
+        <tr><td data-label="項目">交通</td><td data-label="說明">機捷來回 ×2、捷運、少量的士</td><td class="num" data-label="NT$">1,400</td><td class="num" data-label="HKD 約">340</td></tr>
+        <tr><td data-label="項目">門票 / 活動</td><td data-label="說明">劇場已付；廟宇香油、展館</td><td class="num" data-label="NT$">400</td><td class="num" data-label="HKD 約">100</td></tr>
+        <tr><td data-label="項目">購物（食品）</td><td data-label="說明">鳳梨酥、太陽餅、堅果、茶</td><td class="num" data-label="NT$">4,500</td><td class="num" data-label="HKD 約">1,100</td></tr>
+        <tr><td data-label="項目">購物（藥妝 / 日用品）</td><td data-label="說明">Solone、漱口水、棉花棒、內衣</td><td class="num" data-label="NT$">2,500</td><td class="num" data-label="HKD 約">610</td></tr>
+        <tr><td data-label="項目">購物（酒 / 咖啡）</td><td data-label="說明">Kavalan、咖啡豆</td><td class="num" data-label="NT$">2,000</td><td class="num" data-label="HKD 約">490</td></tr>
+        <tr><td data-label="項目">雜項 / 緩衝</td><td data-label="說明">約 10%</td><td class="num" data-label="NT$">2,100</td><td class="num" data-label="HKD 約">510</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">合計</td><td class="num" data-label="NT$ 合計">23,000</td><td class="num" data-label="HKD 合計">5,615</td></tr>
+      </tfoot>
+    </table>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:var(--ink-3);margin-top:12px">
+    匯率以 1 HKD ≈ 4.1 TWD 估算。魚貫鐵板燒<b>只收現金</b>，請預先備妥 NT$4,400 現金。
+  </p>
+</section>
+
+<!-- ============ PACKING ============ -->
+<section id="packing">
+  <div class="sec-head"><span class="sec-num">08</span><h2>🎒 行李清單（11 月台北 · 3 天）</h2></div>
+  <p class="sec-desc">台北 11 月約 19–24°C，東北季風帶來降雨，濕冷感明顯。以「洋蔥式穿搭＋防水鞋」為主。</p>
+
+  <div class="grid g3">
+    <div class="card">
+      <h3 style="margin:0 0 9px;font-size:14px">📄 證件 / 金錢</h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="p1"><label for="p1">護照（效期 6 個月以上）</label></li>
+        <li><input type="checkbox" id="p2"><label for="p2">身份證 / 回鄉證</label></li>
+        <li><input type="checkbox" id="p3"><label for="p3">機票 / 電子登機證</label></li>
+        <li><input type="checkbox" id="p4"><label for="p4">酒店確認（日光樂居西門館 · 6F）</label></li>
+        <li><input type="checkbox" id="p5"><label for="p5">劇場電子票（OPENTIX）</label></li>
+        <li><input type="checkbox" id="p6"><label for="p6">信用卡（已通知銀行）</label></li>
+        <li><input type="checkbox" id="p7"><label for="p7">台幣現金 NT$8,000（鐵板燒要現金）</label></li>
+        <li><input type="checkbox" id="p8"><label for="p8">旅遊保險文件</label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 9px;font-size:14px">👕 衣物（19–24°C · 有雨）</h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="p9"><label for="p9">薄外套 / 防風外套 ×1</label></li>
+        <li><input type="checkbox" id="p10"><label for="p10">長袖上衣 ×3、短袖 ×2</label></li>
+        <li><input type="checkbox" id="p11"><label for="p11">長褲 ×2、裙 / 短褲 ×1</label></li>
+        <li><input type="checkbox" id="p12"><label for="p12">好走的鞋（防水為佳）</label></li>
+        <li><input type="checkbox" id="p13"><label for="p13">室內拖鞋（酒店多不提供）</label></li>
+        <li><input type="checkbox" id="p14"><label for="p14">摺疊傘 / 輕便雨衣</label></li>
+        <li><input type="checkbox" id="p15"><label for="p15">貼身衣物 ×3、襪 ×3</label></li>
+        <li><input type="checkbox" id="p16"><label for="p16">睡衣</label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 9px;font-size:14px">🔌 電子 / 其他</h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="p17"><label for="p17">手機＋充電線</label></li>
+        <li><input type="checkbox" id="p18"><label for="p18">行動電源（不可託運）</label></li>
+        <li><input type="checkbox" id="p19"><label for="p19">台灣插座為美式兩腳扁插（110V）— 香港三腳需轉接</label></li>
+        <li><input type="checkbox" id="p20"><label for="p20">環保購物袋（買伴手禮用）</label></li>
+        <li><input type="checkbox" id="p21"><label for="p21">摺疊行李袋（裝戰利品）</label></li>
+        <li><input type="checkbox" id="p22"><label for="p22">個人藥物</label></li>
+        <li><input type="checkbox" id="p23"><label for="p23">悠遊卡（或到 7-11 買，NT$100 押金）</label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CULTURE ============ -->
+<section id="culture">
+  <div class="sec-head"><span class="sec-num">09</span><h2>🙏 台灣文化禮儀 · Do's & Don'ts</h2></div>
+  <p class="sec-desc">台灣整體非常友善、對旅客包容度高，但以下幾點能讓你更自在。</p>
+
+  <div class="do-dont">
+    <div class="do">
+      <h4>✓ Do</h4>
+      <ul>
+        <li>進寺廟脫帽、輕聲；拜拜用右手拿香</li>
+        <li>排隊文化很強，捷運手扶梯靠右站</li>
+        <li>捷運內禁止飲食（含喝水），會被罰款</li>
+        <li>結帳說「謝謝」、點餐說「不好意思」很自然</li>
+        <li>夜市多為現金，先備小鈔</li>
+        <li>餐廳多不收服務費，但可留零錢</li>
+        <li>垃圾分類嚴格，便利店／捷運站有分類桶</li>
+        <li>買手搖飲可自備杯，部分店折 NT$5</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h4>✗ Don't</h4>
+      <ul>
+        <li>不要在捷運／公車上飲食</li>
+        <li>不要用手指指神像或他人</li>
+        <li>不要插隊（連等電梯都會排隊）</li>
+        <li>不要在公共場所大聲講電話</li>
+        <li>不要隨意拍攝路人（尤其廟宇內）</li>
+        <li>不要帶豬肉製品回港（非洲豬瘟重罰）</li>
+        <li>不要帶生果／植物未申報入境香港</li>
+        <li>不要以為所有店都收信用卡（夜市、老店只收現金）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h3 style="margin:0 0 10px;font-size:14px">💡 實用資訊</h3>
+    <div class="grid g3" style="font-size:13.5px">
+      <div>
+        <b>電壓 / 插座</b><br>
+        110V，美式兩腳扁插（A 型）。香港三腳需轉接頭。
+      </div>
+      <div>
+        <b>緊急電話</b><br>
+        110 警察 · 119 消防／救護 · 1999 市民熱線
+      </div>
+      <div>
+        <b>悠遊卡</b><br>
+        捷運、公車、便利店、部分夜市可用。7-11 購買，NT$100 押金。
+      </div>
+      <div>
+        <b>退稅</b><br>
+        同店同日滿 NT$2,000 可辦退稅（5%），機場辦理。
+      </div>
+      <div>
+        <b>網絡</b><br>
+        機場買預付 SIM（3 日約 NT$300）或 eSIM。公共 Wi-Fi 普及。
+      </div>
+      <div>
+        <b>小費</b><br>
+        不強制。餐廳多已含 10% 服務費，其餘不需另給。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREP ============ -->
+<section id="prep">
+  <div class="sec-head"><span class="sec-num">10</span><h2>✅ 出發前準備時間表</h2></div>
+  <p class="sec-desc">距離 11/20 出發，按時間倒數執行。</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin:0 0 9px;font-size:14px">🗓 現在 – 出發前 2 週</h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="r1"><label for="r1">確認 3 個訂位（煉丹爐、魚貫鐵板燒、劇場）</label></li>
+        <li><input type="checkbox" id="r2"><label for="r2">確認 日光樂居西門館 入住／退房時間（20 Nov 入住、23 Nov 退房）</label></li>
+        <li><input type="checkbox" id="r3"><label for="r3">查香港入境台灣簽證 / 網簽（如需要）</label></li>
+        <li><input type="checkbox" id="r4"><label for="r4">買旅遊保險</label></li>
+        <li><input type="checkbox" id="r5"><label for="r5">通知信用卡公司旅遊日期</label></li>
+        <li><input type="checkbox" id="r6"><label for="r6">下載 OPENTIX App，確認電子票可取</label></li>
+        <li><input type="checkbox" id="r7"><label for="r7">查 After Rain IG 11 月營業時間表</label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 9px;font-size:14px">🗓 出發前 1 週 – 當日</h3>
+      <ul class="chk">
+        <li><input type="checkbox" id="r8"><label for="r8">博客來訂書（選超商取貨，出發前 2 日下單）</label></li>
+        <li><input type="checkbox" id="r9"><label for="r9">換台幣現金（至少 NT$8,000，鐵板燒要現金）</label></li>
+        <li><input type="checkbox" id="r10"><label for="r10">下載 Google Maps 離線地圖（台北市）</label></li>
+        <li><input type="checkbox" id="r11"><label for="r11">查 11/20–22 台北天氣預報</label></li>
+        <li><input type="checkbox" id="r12"><label for="r12">整理行李（見第 08 節）</label></li>
+        <li><input type="checkbox" id="r13"><label for="r13">CX488 網上預辦登機（起飛前 48 小時）</label></li>
+        <li><input type="checkbox" id="r14"><label for="r14">截圖所有訂位確認（離線可看）</label></li>
+        <li><input type="checkbox" id="r15"><label for="r15">設 05:30 鬧鐘（08:00 航班，06:00 到機場）</label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOTES ============ -->
+<section id="notes">
+  <div class="sec-head"><span class="sec-num">11</span><h2>⚠️ 風險提示與待確認事項</h2></div>
+  <div class="card">
+    <ul style="margin:0;padding-left:20px;font-size:13.5px">
+      <li><b>魚貫鐵板燒在中山區，不在大安</b> — 地址是 林森北路622號（中山國小站），所以 Day 2 已改成「東門 → 中山國小 → 東區 → 劍潭」，唔會來回跑。</li>
+      <li><b>魚貫鐵板燒只收現金</b> — 2 位約 NT$4,400，請預先備妥現金，不要依賴信用卡。</li>
+      <li><b>甜滿ヌガー 限購＋售完即止</b> — 建議 10:00 開門就到，帶現金。</li>
+      <li><b>佳德鳳梨酥排隊</b> — 週日上午可能 30–60 分鐘，若時間緊改微熱山丘。</li>
+      <li><b>阜杭豆漿週日排隊</b> — 30–60 分鐘，07:30 到較穩。</li>
+      <li><b>11 月台北多雨</b> — 每天備 Plan B 室內方案（已列於各日）。</li>
+      <li><b>行李限額</b> — 台灣米、米粉等較重，注意 15kg 限制；水果、肉製品入境香港有管制。</li>
+      <li><b>酒店在 6 樓</b> — 日光樂居西門館位於「西門新宿」大樓 6F（西寧南路72之1號），入口在騎樓，搭電梯上 6 樓。☎ +886 2 2388 9978。</li>
+      <li><b>酒店退房日為 23 Nov</b> — 但 22 Nov 晚已離台，可提前與酒店確認 22 Nov 退房不影響訂單。</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    台北 3D2N · 20–22 Nov 2026 · v1 · 依 travel-planner skill 流程產出（偏好 → 行程 → 預算 → 行李 → 文化 → 出發前）<br>
+    所有地點連結為 Google Maps 搜尋結果，實際營業時間請以店家公告為準。
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" type="button" aria-label="回到頂部">↑</button>
+
+<script>
+(function () {
+  var KEY = 'taiwan-3d2n-v1-checks';
+  var boxes = document.querySelectorAll('input[type="checkbox"]');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+
+  boxes.forEach(function (box) {
+    if (saved[box.id]) box.checked = true;
+    box.addEventListener('change', function () {
+      saved[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+
+  // tapping a map link inside a checklist label must NOT tick the box
+  document.querySelectorAll('.chk label a').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.stopPropagation(); });
+  });
+
+  // back to top
+  var btn = document.getElementById('backTop');
+  if (btn) {
+    var onScroll = function () {
+      if (window.scrollY > 600) { btn.classList.add('show'); }
+      else { btn.classList.remove('show'); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // keep the active nav pill in view while scrolling
+  var nav = document.querySelector('nav.toc .wrap');
+  var links = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
+  var secs = links.map(function (a) {
+    return document.getElementById(a.getAttribute('href').slice(1));
+  });
+  if (nav && links.length) {
+    var spy = function () {
+      var y = window.scrollY + 90;
+      var idx = 0;
+      for (var i = 0; i < secs.length; i++) {
+        if (secs[i] && secs[i].offsetTop <= y) { idx = i; }
+      }
+      links.forEach(function (a, i) {
+        a.style.background = i === idx ? 'var(--brand-soft)' : '';
+        a.style.color = i === idx ? 'var(--brand-2)' : '';
+      });
+      var active = links[idx];
+      if (active && nav.scrollWidth > nav.clientWidth) {
+        var target = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+        nav.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    spy();
+  }
+})();
+</script>
+
+</body>
+</html>
